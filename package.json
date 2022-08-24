@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/Inforitnl/dev-deployment-cleanup"
   },
-  "author": "Valentyn Andrushko <vandrushko@inforit.nl>",
+  "author": "Inforit B.V.",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Inforitnl/dev-deployment-cleanup/issues"
