@@ -8,7 +8,7 @@ This container image can be used to automatically drop mongoDB databases en clea
 
 ## environment variables
 
-These environment variables MUST be set! Purpose of this container image is to automatically delete resources after each feature(dev) deployment is deleted from k8s. Database/exchanges names will be different on every run.
+These environment variables are mandatory and must be set before running this container.
 
 | Variable                 | Purpose                                                                                          |
 | ------------------------ | -------------------------------------------------------------------------------------------------|
