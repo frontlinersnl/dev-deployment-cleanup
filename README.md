@@ -2,7 +2,7 @@
 
 # dev-deployment-cleanup docker image
 
-This container image can be used to automatically drop mongoDB databases en clean-up rabbitmq resources like an exchange, its bindings and destion queues.
+This container image can be used to automatically drop mongoDB databases and clean up rabbitmq resources like an exchange, its bindings and destination queues.
 
 ## Usage
 
