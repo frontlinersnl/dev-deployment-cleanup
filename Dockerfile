@@ -16,8 +16,8 @@ RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python \
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.9/main' >> /etc/apk/repositories \
     && echo 'http://dl-cdn.alpinelinux.org/alpine/v3.9/community' >> /etc/apk/repositories \
     && apk update \
-    && apk add mongodb yaml-cpp=0.6.2-r2 \
-    && apk add mongodb-tools  # to add mongodump and mongorestore \
+    && apk add --no-cache mongodb yaml-cpp=0.6.2-r2 \
+    && apk add --no-cache mongodb-tools  # to add mongodump and mongorestore \
     && mongo --version
 
 WORKDIR /
