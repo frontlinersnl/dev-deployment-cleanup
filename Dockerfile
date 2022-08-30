@@ -8,17 +8,17 @@ RUN apk add --no-cache ca-certificates bash git openssh curl \
 
 # Install python/pip
 ENV PYTHONUNBUFFERED=1
-RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
-RUN python3 -m ensurepip
-RUN pip3 install --no-cache --upgrade pip setuptools
+RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python \
+    && python3 -m ensurepip \
+    && pip3 install --no-cache --no-cache-dir --upgrade pip setuptools
 
 # Install mongodb 
-RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.9/main' >> /etc/apk/repositories
-RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.9/community' >> /etc/apk/repositories
-RUN apk update
-RUN apk add mongodb yaml-cpp=0.6.2-r2
-RUN apk add mongodb-tools  # to add mongodump and mongorestore
-RUN mongo --version
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.9/main' >> /etc/apk/repositories \
+    && echo 'http://dl-cdn.alpinelinux.org/alpine/v3.9/community' >> /etc/apk/repositories \
+    && apk update \
+    && apk add mongodb yaml-cpp=0.6.2-r2 \
+    && apk add mongodb-tools  # to add mongodump and mongorestore \
+    && mongo --version
 
 WORKDIR /
 COPY ./scripts /opt/
