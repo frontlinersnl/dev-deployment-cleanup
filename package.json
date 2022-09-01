@@ -1,0 +1,21 @@
+{
+  "name": "dev-deployment-cleanup",
+  "version": "1.0.0",
+  "description": "[![logo](./logo.jpg)](https://inforit.nl)",
+  "main": "Dockerfile",
+  "scripts": {
+    "build": "docker build -t inforitnl/dev-deployment-cleanup .",
+    "tag": "docker tag inforitnl/dev-deployment-cleanup",
+    "push": "docker push inforitnl/dev-deployment-cleanup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Inforitnl/dev-deployment-cleanup"
+  },
+  "author": "Inforit B.V.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Inforitnl/dev-deployment-cleanup/issues"
+  },
+  "homepage": "https://github.com/Inforitnl/dev-deployment-cleanup#readme"
+}
