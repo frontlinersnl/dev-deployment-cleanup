@@ -2,8 +2,9 @@
 # 1. MongoDB cleanup
 # MONGO_URI and MONGO_DB are already set as environment variables
 # connect to mongoDb and drop database 
-if [[ ${MONGO_DB} != *"admin"* ]]; then
-  mongo "${MONGO_URI}" --eval "db.getSiblingDB('${MONGO_DB}');db.dropDatabase()"
+if [[ ${MONGO_DB} != *"admin"* && ${MONGO_URI} == *"<databaseName>"* ]]; then
+  MONGO_URI_ENV=$(echo "${MONGO_URI/<databaseName>/"$MONGO_DB"}")
+  mongo "${MONGO_URI_ENV}" --eval "db.getSiblingDB('${MONGO_DB}');db.dropDatabase()"
 fi
 # 2.Rabbitmq cleanup
 # MESSAGE_QUEUE_URI and EXCHANGE_NAME are already set as environment variables
