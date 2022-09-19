@@ -5,6 +5,10 @@
 if [[ ${MONGO_DB} != *"admin"* && ${MONGO_URI} == *"<databaseName>"* ]]; then
   MONGO_URI_ENV=$(echo "${MONGO_URI/<databaseName>/"$MONGO_DB"}")
   mongo "${MONGO_URI_ENV}" --eval "db.getSiblingDB('${MONGO_DB}');db.dropDatabase()"
+
+  # connect to mongoDb and drop the CAP database
+  MONGO_URI_CAP_ENV=$(echo "${MONGO_URI/<databaseName>/"$MONGO_DB-cap"}")
+  mongo "${MONGO_URI_CAP_ENV}" --eval "db.getSiblingDB('${MONGO_DB}-cap');db.dropDatabase()"
 fi
 # 2.Rabbitmq cleanup
 # MESSAGE_QUEUE_URI and EXCHANGE_NAME are already set as environment variables
