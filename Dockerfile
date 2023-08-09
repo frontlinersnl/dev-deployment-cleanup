@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.18.3
 
 WORKDIR /source
 ENV RABBITMQADMIN_VERSION="v3.9.0"
